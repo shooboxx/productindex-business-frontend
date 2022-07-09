@@ -2,7 +2,7 @@ export default function Home() {
 
     return (
         <>
-        Testing page
+        Testing page!
         <style>{`
         
         
