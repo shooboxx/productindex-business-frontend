@@ -10,7 +10,7 @@ interface TextFieldProps  {
     error?: string;
     disabled?: boolean;
     optionList?: {value?: string, name?: string, default?: Boolean}[];
-    //TODO: add onBlur
+    // TODO: add onBlur
 }
 
 const Dropdown: React.FC<TextFieldProps>  = ({ 
@@ -32,7 +32,7 @@ const Dropdown: React.FC<TextFieldProps>  = ({
     return (
         <div className='dropdown'>
               <label className="label label-regular" htmlFor={name}>{valueLabel}</label><br />
-              <select name={name} id={name} className='textbox' onChange={onChange} defaultValue={'-'} value={value} disabled={disabled}>
+              <select name={name} id={name} className='textbox' onChange={onChange} defaultValue={'-'} disabled={disabled}>
                 {optionList && <> <option disabled hidden value={'-'}> - </option> {optionList.map((item) => <option key={item.name} value={item.value}>{item.name}</option> )}</>}
               </select>
             {error && <div className="error-alert">{error}</div>}

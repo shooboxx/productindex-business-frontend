@@ -217,6 +217,38 @@ hr {
 margin: 2rem 0 1rem 0;
 }
 
+.file-label {
+  color: #1c1c1c;
+  font-weight: 300;
+}
+.btn-upload::-webkit-file-upload-button {
+  display: none;
+}
+.btn-upload::before {
+  content: 'Upload photo';
+  display: inline-block;
+  border: 1px solid #A0A0A0;
+  border-radius: 4px;
+  padding: 8px 16px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background-color: #F4F4F4;
+  margin: 0.5rem 0.5rem 1rem 0px;
+}
+
+.file-label-regular {
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+.text-container {
+  width: 100%;
+}
+
 @media (max-width: 940px) {
   .auth-screens {
     height: auto;
