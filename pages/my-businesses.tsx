@@ -5,7 +5,7 @@ import { EmptyStateMessages } from '../const/emptyStateMessages';
 type Props = {}
 
 export default function MyBusinesses({}: Props) {
-    const [businesses, setBusinesses] = useState([])
+    const [businesses, setBusinesses] = useState([{}])
   return (
     <div className='biz-container'>
         <div className="business-section">
@@ -49,7 +49,7 @@ export default function MyBusinesses({}: Props) {
         {`
             .center {
                 text-align: center;
-                padding-top: 25%;
+                padding: 15% 0;
             }
             .biz-container {
                 display: flex;
@@ -95,8 +95,7 @@ export default function MyBusinesses({}: Props) {
                 padding: 1.5rem 1rem;
                 max-width: 750px;
                 width: 750px;
-                max-height: 450px;
-                height: 450px;
+                height: 55vh;
                 border-radius: 4px;
                 margin-top: 1.5rem;
                 overflow-y: auto;
