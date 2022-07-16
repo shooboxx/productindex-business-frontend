@@ -1,5 +1,5 @@
 import React, { useState, createContext }from 'react'
-import { Authentication } from '../api/auth';
+import { Authentication } from '@productindex/api/auth';
 
 interface UserAttributes {
     user_id?: number;

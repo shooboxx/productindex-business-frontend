@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { EmptyStateMessages } from '../const/emptyStateMessages';
+import { EmptyStateMessages } from '@productindex/const/emptyStateMessages';
 
 type Props = {}
 
