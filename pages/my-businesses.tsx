@@ -2,9 +2,7 @@ import Link from 'next/link';
 import React, {useState} from 'react';
 import {EmptyStateMessages} from '@productindex/const/emptyStateMessages';
 
-type Props = {};
-
-export default function MyBusinesses({}: Props) {
+export default function MyBusinesses() {
   const [businesses, setBusinesses] = useState([{}]);
   return (
     <div className="biz-container">

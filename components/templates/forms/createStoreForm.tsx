@@ -1,13 +1,10 @@
-import React, {useState} from 'react';
-import {TextField} from '../textfield';
+import React from 'react';
+import { TextField } from '@productindex/components/formElements/Textfield';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import {Dropdown} from '../dropdown';
-import {ImageUpload} from '../ImageUpload';
+import {Dropdown} from '@productindex/components/formElements/dropdown';
 
-type Props = {};
-
-export default function CreateStoreForm({}: Props) {
+export default function CreateStoreForm() {
   const formik = useFormik({
     initialValues: {
       storeName: '',
@@ -38,9 +35,9 @@ export default function CreateStoreForm({}: Props) {
           valueLabel="Store name"
           onChange={formik.handleChange}
           value={formik.values.storeName.replace(' ', '')} //TODO: Allow letters, numbers, underscores
-          className="med-textbox"
           error={formik.errors.storeName}
           onBlur={formik.handleBlur}
+          showLabel
         />
         <TextField
           name="addressOne"
@@ -48,11 +45,11 @@ export default function CreateStoreForm({}: Props) {
           valuePlaceholder="Business address line 1"
           valueLabel="Address line 1"
           onChange={formik.handleChange}
-          value={formik.values.addressOne} //TODO: Allow letters, numbers, underscores
-          className="med-textbox"
+          value={formik.values.addressOne}
           error={formik.errors.addressOne}
           onBlur={formik.handleBlur}
-          optional
+          isOptional
+          showLabel
         />
         <TextField
           name="addressTwo"
@@ -60,19 +57,19 @@ export default function CreateStoreForm({}: Props) {
           valuePlaceholder="Business address line 2"
           valueLabel="Address line 2"
           onChange={formik.handleChange}
-          value={formik.values.addressTwo} //TODO: Allow letters, numbers, underscores
-          className="med-textbox"
+          value={formik.values.addressTwo} 
           error={formik.errors.addressTwo}
           onBlur={formik.handleBlur}
-          optional
+          isOptional
+          showLabel
         />
         <Dropdown
           valueLabel="Country"
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
           onChange={formik.handleChange}
           error={formik.errors.country}
-          value={formik.values.country}
           name={'country'}
+          showLabel
           // onBlur={formik.handleBlur}
         />
         <Dropdown
@@ -80,8 +77,8 @@ export default function CreateStoreForm({}: Props) {
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
           onChange={formik.handleChange}
           error={formik.errors.state}
-          value={formik.values.state}
           name={'state'}
+          showLabel
           // onBlur={formik.handleBlur}
         />
 

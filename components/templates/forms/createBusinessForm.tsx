@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import {TextField} from '../textfield';
+import {TextField} from '@productindex/components/formElements/Textfield'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import {Dropdown} from '../dropdown';
-import {ImageUpload} from '../ImageUpload';
+import {Dropdown} from '@productindex/components/formElements/dropdown'
+import {ImageUpload} from '@productindex/components/formElements/ImageUpload';
 
-type Props = {};
 
-export default function CreateBusinesForm({}: Props) {
+export default function CreateBusinesForm() {
   const [uploadError, setUploadError] = useState('');
   const [photoUpload, setPhoto] = useState('');
   const checkFileSize = e => {
@@ -49,8 +48,9 @@ export default function CreateBusinesForm({}: Props) {
         <ImageUpload
           name="biz-profile-photo"
           valueLabel="Display Photo"
-          optional
+          isOptional
           onChange={validatePhoto}
+          showLabel
           error={uploadError}
         />
         <TextField
@@ -60,17 +60,17 @@ export default function CreateBusinesForm({}: Props) {
           valueLabel="Business name"
           onChange={formik.handleChange}
           value={formik.values.businessName}
-          className="med-textbox"
           error={formik.errors.businessName}
           onBlur={formik.handleBlur}
+          showLabel
         />
         <Dropdown
           valueLabel="Business Category"
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
           onChange={formik.handleChange}
           error={formik.errors.category}
-          value={formik.values.category}
           name={'category'}
+          showLabel
           // onBlur={formik.handleBlur}
         />
         <TextField
@@ -80,10 +80,10 @@ export default function CreateBusinesForm({}: Props) {
           valueLabel="Description"
           onChange={formik.handleChange}
           value={formik.values.description}
-          className="med-textbox"
           error={formik.errors.description}
           onBlur={formik.handleBlur}
-          optional
+          isOptional
+          showLabel
         />
         <br />
         <input

@@ -3,3 +3,5 @@ package.json
 package-lock.json
 next-env.d.ts
 .eslintrc.cjs
+node_modules
+.env

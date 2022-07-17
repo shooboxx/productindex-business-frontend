@@ -1,8 +1,7 @@
 import React from 'react';
-import CreateBusinesForm from '../components/forms/createBusinessForm';
-type Props = {};
+import CreateBusinesForm from '@productindex/components/templates/forms/createBusinessForm';
 
-export default function CreateBusiness({}: Props) {
+export default function CreateBusiness() {
   return (
     <div className="biz-container">
       <div className="create-card">
