@@ -47,67 +47,7 @@ export default function ManageBusiness ({}: Props) {
 
         
         <style>{`
-            .biz-sidebar {
-              display: flex;
-              flex-direction: column;
-              min-height: 100vh;
-              width: 14rem;
-              
-            }
-            #stores-list {
-              margin: 0 0 1rem 0;
-            }
-            .item-padding {
-              padding: 0 .5rem;
-            }
 
-            .business-box {
-              padding: 0 0.5rem;
-            }
-            .business-section {
-              flex-grow: 1;
-            }
-            .manage-business {
-              flex-grow: 8;
-              
-            }
-            .nav-selector {
-                padding: 8px 8px;
-                // margin-bottom: 4px;
-                border-radius: 4px;
-                display: block;
-            }
-            .nav-selector:hover {
-                background-color: #E5E9E8;
-            }
-            .nav-selector:active {
-                background-color: #E5E9E8;
-            }
-            
-            .profile-sidebar {
-                width: 20%;
-                display: inline-block;
-            }
-
-            .nav-selector:visited,
-            .nav-selector:link {
-                text-decoration: none;
-                color: #5C5C5C;
-                font-weight: 400;
-            }
-            .side-bar-section:not(:last-child) {
-              border-bottom: 1px solid #E5E9E8;
-            }
-            .side-bar-section {
-              background-color: #F4F4F4;
-              padding: 0 0 1rem 0 ;
-            }
-            .side-bar-label {
-              text-transform: uppercase;
-              padding: 1rem 0.5rem;
-              font-size: 12px;
-              letter-spacing: 1px;
-            }
         `}
 
         </style>

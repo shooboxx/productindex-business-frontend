@@ -6,4 +6,4 @@ export default function ManageProducts({}: Props) {
   return (
     <div>products</div>
   )
-}
+} 
