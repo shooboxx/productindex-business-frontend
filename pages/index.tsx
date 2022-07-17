@@ -1,9 +1,10 @@
 export default function Home() {
-
-    return (
-        <>
-        <style>{`
+  return (
+    <>
+      <style>{`
 
         
-        `}</style></>
-    )}
+        `}</style>
+    </>
+  );
+}

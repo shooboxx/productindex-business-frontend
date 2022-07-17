@@ -5,6 +5,6 @@ module.exports = {
   },
   env: {
     BACKEND_URL: 'http://localhost:8080',
-    BUSINESS_URL: 'https://www.biz.theproductindex.io'
-  }
-}
+    BUSINESS_URL: 'https://www.biz.theproductindex.io',
+  },
+};

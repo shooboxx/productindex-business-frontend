@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 import CreateStoreForm from '../components/forms/createStoreForm';
-type Props = {}
+type Props = {};
 
 export default function CreateBusiness({}: Props) {
   return (
-        <div className='biz-container'>
-            <div className="create-card">
-                <h4>Create a store</h4>
-                <br />
-                <CreateStoreForm />
-            </div>
-        <style>{`
+    <div className="biz-container">
+      <div className="create-card">
+        <h4>Create a store</h4>
+        <br />
+        <CreateStoreForm />
+      </div>
+      <style>{`
         .create-card {
             width: 37.5rem;
             padding: 3rem 2rem;
@@ -22,5 +22,5 @@ export default function CreateBusiness({}: Props) {
         }      
         `}</style>
     </div>
-  )
+  );
 }

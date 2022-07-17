@@ -1,51 +1,47 @@
-import Link from 'next/link'
-import React, { useState } from 'react'
-import { EmptyStateMessages } from '@productindex/const/emptyStateMessages';
+import Link from 'next/link';
+import React, {useState} from 'react';
+import {EmptyStateMessages} from '@productindex/const/emptyStateMessages';
 
-type Props = {}
+type Props = {};
 
 export default function MyBusinesses({}: Props) {
-    const [businesses, setBusinesses] = useState([{}])
+  const [businesses, setBusinesses] = useState([{}]);
   return (
-    <div className='biz-container'>
-        <div className="business-section">
-            <h4>My Businesses (3)</h4>
-            <p>Mangage your business and keep up to date with what's new!</p>
-            <div className="business-card-container">
-                {
-                businesses.length > 0 ?                
-                <Link href='testing'><a className='card-link'>
-                    <div className='business-card'>
-                        
-                        <div className='biz-profile-photo'><img src="/images/Default-photo-store.png" alt="Default business photo" /></div>
-                        <div className="biz-card-details">
-                            <h4>My business name</h4>
-                            <p>Business description</p>
-                        </div>
-                        <div className="highlighter">
-
-                        </div>
-
-                    </div>
-                    </a>
-                </Link>
-
-                : <div className='center'>
-                    <h5>{EmptyStateMessages.NoBusinessesYet}</h5> 
-                    <p>{EmptyStateMessages.NoBusinessSubheader}</p> 
-                
+    <div className="biz-container">
+      <div className="business-section">
+        <h4>My Businesses (3)</h4>
+        <p>Mangage your business and keep up to date with what's new!</p>
+        <div className="business-card-container">
+          {businesses.length > 0 ? (
+            <Link href="testing">
+              <a className="card-link">
+                <div className="business-card">
+                  <div className="biz-profile-photo">
+                    <img src="/images/Default-photo-store.png" alt="Default business photo" />
+                  </div>
+                  <div className="biz-card-details">
+                    <h4>My business name</h4>
+                    <p>Business description</p>
+                  </div>
+                  <div className="highlighter"></div>
                 </div>
-                }
-
-                
+              </a>
+            </Link>
+          ) : (
+            <div className="center">
+              <h5>{EmptyStateMessages.NoBusinessesYet}</h5>
+              <p>{EmptyStateMessages.NoBusinessSubheader}</p>
             </div>
-            <Link href='/create-business'><a><button className='btn btn-primary btn-form'>Create a business</button></a></Link>
+          )}
         </div>
+        <Link href="/create-business">
+          <a>
+            <button className="btn btn-primary btn-form">Create a business</button>
+          </a>
+        </Link>
+      </div>
 
-
-
-
-    <style>
+      <style>
         {`
             .center {
                 text-align: center;
@@ -119,7 +115,7 @@ export default function MyBusinesses({}: Props) {
                 box-shadow: 0px 6px 20px rgba(58, 58, 58, 0.1);
             }
         `}
-    </style>
+      </style>
     </div>
-  )
+  );
 }

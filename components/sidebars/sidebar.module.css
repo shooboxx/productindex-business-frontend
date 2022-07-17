@@ -1,74 +1,72 @@
-  .bizSidebar {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 14rem;
-    
-  }
-  #storesList {
-    margin: 0 0 1rem 0;
-  }
-  .itemPadding {
-    padding: 0 .5rem;
-  }
+.bizSidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 14rem;
+}
+#storesList {
+  margin: 0 0 1rem 0;
+}
+.itemPadding {
+  padding: 0 0.5rem;
+}
 
-  .businessBox {
-    padding: 0 0.5rem;
-  }
+.businessBox {
+  padding: 0 0.5rem;
+}
 
-  .manageBusiness {
-    flex-grow: 8;
-    
-  }
-  .navSelector {
-      padding: 8px 8px;
-      border-radius: 4px;
-      display: block;
-  }
-  .navSelector:hover {
-      background-color: #E5E9E8;
-  }
-  .navSelector:active {
-      background-color: #E5E9E8;
-  }
-  
-  .profileSidebar {
-      width: 20%;
-      display: inline-block;
-  }
+.manageBusiness {
+  flex-grow: 8;
+}
+.navSelector {
+  padding: 8px 8px;
+  border-radius: 4px;
+  display: block;
+}
+.navSelector:hover {
+  background-color: #e5e9e8;
+}
+.navSelector:active {
+  background-color: #e5e9e8;
+}
 
-  .navSelector:visited,
-  .navSelector:link {
-      text-decoration: none;
-      color: #5C5C5C;
-      font-weight: 400;
-  }
-  .sideBarSection:not(:last-child) {
-    border-bottom: 1px solid #E5E9E8;
-  }
-  .sideBarSection {
-    background-color: #F4F4F4;
-    padding: 0 0 1rem 0 ;
-  }
-  .sideBarLabel {
-    text-transform: uppercase;
-    padding: 1rem 0.5rem;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-  }
+.profileSidebar {
+  width: 20%;
+  display: inline-block;
+}
+
+.navSelector:visited,
+.navSelector:link {
+  text-decoration: none;
+  color: #5c5c5c;
+  font-weight: 400;
+}
+.sideBarSection:not(:last-child) {
+  border-bottom: 1px solid #e5e9e8;
+}
+.sideBarSection {
+  background-color: #f4f4f4;
+  padding: 0 0 1rem 0;
+}
+.sideBarLabel {
+  text-transform: uppercase;
+  padding: 1rem 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
 
 .businessLogoBox img {
-    width: 160px;
+  width: 160px;
 }
 
 .businessLogoBox {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .businessLogoBox .forBusiness {
-    position: absolute;
-    display: inline-block;
-    top: 48px;
-    left: 54px;
-    font-weight: 300;
+  position: absolute;
+  display: inline-block;
+  top: 48px;
+  left: 54px;
+  font-weight: 300;
 }
