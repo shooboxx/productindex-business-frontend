@@ -36,7 +36,7 @@ export default function CreateBusinesForm() {
     },
     validationSchema: Yup.object({
       businessName: Yup.string()
-        .min(3, 'Business name must be at least 3 characters long')
+        .min(3, 'Business name must be at least 3 characters long') //TODO: Add this to a const
         .required('Business name is required'), //#TODO: Add this to const
       category: Yup.string().required('Business category is required'), //#TODO: Add this to const
     }),
@@ -67,10 +67,11 @@ export default function CreateBusinesForm() {
         <Dropdown
           valueLabel="Business Category"
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
-          onChange={formik.handleChange}
+          onChange={(e)=> formik.setFieldValue('category', e.target.value)}
           error={formik.errors.category}
           name={'category'}
           showLabel
+          onBlur={formik.handleBlur}
           // onBlur={formik.handleBlur}
         />
         <TextField

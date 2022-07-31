@@ -47,15 +47,14 @@
   letter-spacing: 1px;
 }
 .showHide {
-  position: absolute;
+  position: relative;
   transform: translateY(-3.4rem);
-  margin-left: auto; /* this was float: right;*/
+  float: right;
   margin-right: 2rem;
   padding: 6px;
   cursor: pointer;
   border: 1.5px solid #E5E9E8;
   text-transform: uppercase;
-  display: inline-block;
   user-select: none;
 }
 .textContainer {

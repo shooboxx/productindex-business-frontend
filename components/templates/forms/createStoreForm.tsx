@@ -66,7 +66,7 @@ export default function CreateStoreForm() {
         <Dropdown
           valueLabel="Country"
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
-          onChange={formik.handleChange}
+          onChange={(e)=> formik.setFieldValue('country', e.target.value)}
           error={formik.errors.country}
           name={'country'}
           showLabel
@@ -75,7 +75,7 @@ export default function CreateStoreForm() {
         <Dropdown
           valueLabel="State/Island"
           optionList={[{name: 'The Bahamas', value: 'BAH'}]}
-          onChange={formik.handleChange}
+          onChange={(e)=> formik.setFieldValue('state', e.target.value)}
           error={formik.errors.state}
           name={'state'}
           showLabel

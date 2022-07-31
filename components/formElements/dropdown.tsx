@@ -13,7 +13,7 @@ interface TextFieldProps  {
     valueLabel: string;
     showLabel?: boolean;
     defaultValue?: string;
-    // TODO: add onBlur
+    onBlur?: any;
 }
 
 const Dropdown: React.FC<TextFieldProps>  = ({ 
@@ -25,15 +25,16 @@ const Dropdown: React.FC<TextFieldProps>  = ({
     isOptional,
     valueLabel,
     showLabel,
-    defaultValue
+    defaultValue,
+    onBlur
     
 }) => {
     return (
         
         <div className={styles.dropdown}>
             {showLabel && <Label name={name} valueLabel={valueLabel} isOptional={isOptional}/>}
-            <select name={name} id={name} className={styles.textbox} onChange={onChange} defaultValue={defaultValue ? defaultValue : '-'} disabled={disabled}>
-                {optionList && <> <option disabled hidden value={'-'}> - </option> {optionList.map((item) => <option key={item.name} value={item.value}>{item.name}</option> )}</>}
+            <select name={name} id={name} className={styles.textbox} onChange={onChange} defaultValue={defaultValue ? defaultValue : '-'} disabled={disabled} onBlur={onBlur}>
+                {optionList && <> <option hidden value={'-'}> - </option> {optionList.map((item) => <option key={item.name} value={item.value}>{item.name}</option> )}</>}
             </select>
             <FieldError errorMessage={error}/>
         </div>
