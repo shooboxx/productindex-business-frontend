@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField } from '@productindex/components/formElements/Textfield';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import {Dropdown} from '@productindex/components/formElements/dropdown';
+import {Dropdown} from '@productindex/components/formElements/Dropdown';
 
 export default function CreateStoreForm() {
   const formik = useFormik({

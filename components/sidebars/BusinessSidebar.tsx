@@ -1,7 +1,7 @@
 import React from 'react'
 import Link  from 'next/link';
 import styles from './sidebar.module.css'
-import { Dropdown } from '@productindex/components/formElements/dropdown';
+import { Dropdown } from '@productindex/components/formElements/Dropdown';
 
 type Props = {
     currentlyViewedBusiness: string;
