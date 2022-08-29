@@ -4,9 +4,14 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {Dropdown} from '@productindex/components/formElements/Dropdown'
 import {ImageUpload} from '@productindex/components/formElements/ImageUpload';
+import { TextArea } from '@productindex/components/formElements/TextArea';
+import { BusinessApi } from '@productindex/api/business';
+import { useRouter } from 'next/router';
+import { toasty } from '../../../util/toasty';
 
 
 export default function CreateBusinesForm() {
+  const router = useRouter()
   const [uploadError, setUploadError] = useState('');
   const [photoUpload, setPhoto] = useState('');
   const checkFileSize = e => {
@@ -31,8 +36,16 @@ export default function CreateBusinesForm() {
     },
     onSubmit: async values => {
       if (!uploadError) {
-        console.log(values, photoUpload);
+        //photoUpload has the photo data
+        const {success, data : newBusiness } = await BusinessApi.createBusiness(values)
+        if (success) {
+          toasty('success', 'Your business has been created successfully!')
+          router.replace({
+            pathname: "/create-store",
+            query: { businessId: newBusiness.id },
+        } )}
       }
+
     },
     validationSchema: Yup.object({
       businessName: Yup.string()
@@ -46,7 +59,7 @@ export default function CreateBusinesForm() {
     <>
       <form onSubmit={formik.handleSubmit}>
         <ImageUpload
-          name="biz-profile-photo"
+          name="Upload Photo"
           valueLabel="Display Photo"
           isOptional
           onChange={validatePhoto}
@@ -74,9 +87,8 @@ export default function CreateBusinesForm() {
           onBlur={formik.handleBlur}
           // onBlur={formik.handleBlur}
         />
-        <TextField
+        <TextArea 
           name="description"
-          valueType="text"
           valuePlaceholder="Let your customers know what you provide."
           valueLabel="Description"
           onChange={formik.handleChange}

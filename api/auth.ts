@@ -1,7 +1,7 @@
 import {authAxios} from './axios';
 import {ApiErrorMessage} from './errorMessages/apiErrorMessages';
 
-interface ApiResponse {
+interface ApiResponse { //TODO: Move this to a type folder within this directory
   success: boolean;
   data?: any;
   error?: string;
@@ -77,7 +77,7 @@ export const Authentication = {
       method: 'delete',
       url: `${process.env.BACKEND_URL}/api/auth/logout`,
     })
-      .then(({}) => {
+      .then(() => {
         localStorage.removeItem('isLoggedIn');
         location.reload();
         return {success: true};

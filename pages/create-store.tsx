@@ -1,13 +1,15 @@
 import React from 'react';
 import CreateStoreForm from '@productindex/components/templates/forms/createStoreForm';
+import { useRouter } from 'next/router';
 
 export default function CreateBusiness() {
+  const router = useRouter()
   return (
     <div className="biz-container">
       <div className="create-card">
         <h4>Create a store</h4>
         <br />
-        <CreateStoreForm />
+        <CreateStoreForm businessId={router.query.businessId}/>
       </div>
       <style>{`
         .create-card {

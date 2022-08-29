@@ -3,8 +3,12 @@ import { TextField } from '@productindex/components/formElements/Textfield';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {Dropdown} from '@productindex/components/formElements/Dropdown';
+import { BusinessApi } from '@productindex/api/business';
+import { toasty } from '@productindex/util/toasty';
+import { useRouter } from 'next/router';
 
-export default function CreateStoreForm() {
+export default function CreateStoreForm({businessId}) {
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
       storeName: '',
@@ -12,9 +16,16 @@ export default function CreateStoreForm() {
       addressTwo: '',
       country: '',
       state: '',
+      city: ''
     },
     onSubmit: async values => {
-      console.log(values);
+      const {success, data: newBusinessStore} = await BusinessApi.createBusinessStore(values, businessId)
+      if (success) {
+        toasty('success', 'Store has been successfully created') //TODO: Add to const
+        router.replace({
+          pathname: `/b/${newBusinessStore.business_id}/store/${newBusinessStore.unique_name}`,
+        })
+      }
     },
     validationSchema: Yup.object({
       storeName: Yup.string()
@@ -22,6 +33,7 @@ export default function CreateStoreForm() {
         .required('Business name is required'), //#TODO: Add this to const
       country: Yup.string().required('Country is required'), //#TODO: Add this to const
       state: Yup.string().required('State/Island is required'), //#TODO: Add this to const
+      city: Yup.string().required('City is required'), //#TODO: Add this to const
     }),
   });
 
@@ -80,6 +92,17 @@ export default function CreateStoreForm() {
           name={'state'}
           showLabel
           // onBlur={formik.handleBlur}
+        />
+        <TextField
+          name="city"
+          valueType="text"
+          valuePlaceholder="Which city is your store located in?"
+          valueLabel="City"
+          onChange={formik.handleChange}
+          value={formik.values.city} 
+          error={formik.errors.city}
+          onBlur={formik.handleBlur}
+          showLabel
         />
 
         <br />
