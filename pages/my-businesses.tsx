@@ -18,8 +18,8 @@ export default function MyBusinesses() {
                     <img src="/images/Default-photo-store.png" alt="Default business photo" />
                   </div>
                   <div className="biz-card-details">
-                    <h4>My business name</h4>
-                    <p>Business description</p>
+                    <h5>My business name</h5>
+                    <small>Business description</small>
                   </div>
                   <div className="highlighter"></div>
                 </div>
@@ -51,21 +51,26 @@ export default function MyBusinesses() {
             }
 
             .business-section {
-                display: inline-block;
-                margin: auto 0;
-                position: relative;
-                margin-top: 24px;
+              width: 37.5rem;
+              padding: 3rem 2rem;
+              margin: auto auto;
+              border-radius: 4px;
+              box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 12px 16px rgba(96, 97, 112, 0.16);
+              background-color: #FFF;
+              height: 100%;
             }
             .business-card {
                 background-color: white;
                 display: flex;
-                width: 43.75rem;
+                width: 100%;
                 height: 6.5rem;
                 border-radius: 4px;
                 transition: all .4s;
+                border: 1.5px solid #e5e9e8;
             }
             a.card-link {
                 display: inline-block;
+                width: 100%;
                 
             }
             a.card-link:link {
@@ -85,14 +90,11 @@ export default function MyBusinesses() {
                 margin: 0.5rem;
             }
             .business-card-container {
-                background-color: #F4F4F4;
-                padding: 1.5rem 1rem;
-                max-width: 750px;
-                width: 750px;
-                height: 55vh;
+                height: 25rem;
                 border-radius: 4px;
                 margin-top: 1.5rem;
                 overflow-y: auto;
+                width: 100%;
             }
             .highlighter {
                 background-color: #E5E9E8;
@@ -109,8 +111,8 @@ export default function MyBusinesses() {
             }
 
             a.card-link:hover .business-card {
-                transform: translateY(-2px);
-                box-shadow: 0px 6px 20px rgba(58, 58, 58, 0.1);
+                box-shadow: 0px 6px 20px rgba(58, 58, 58, 0.1), 0px -6px 32px rgba(58, 58, 58, 0.1);
+                // border: 1.5px solid transparent;
             }
         `}
       </style>

@@ -44,7 +44,7 @@ export default function CreateStoreForm({businessId}) {
           name="storeName"
           valueType="text"
           valuePlaceholder="Give your store a unique handle"
-          valueLabel="Store name"
+          valueLabel="Store handle"
           onChange={formik.handleChange}
           value={formik.values.storeName.replace(' ', '')} //TODO: Allow letters, numbers, underscores
           error={formik.errors.storeName}

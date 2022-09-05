@@ -3,6 +3,10 @@
   flex-direction: column;
   min-height: 100vh;
   width: 14rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 #storesList {
   margin: 0 0 1rem 0;

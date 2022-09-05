@@ -1,27 +1,18 @@
 import React from 'react';
-import {BusinessSidebar} from '@productindex/components/sidebars/BusinessSidebar';
+import { useRouter } from 'next/router';
+import MenuPageLayout from '@productindex/components/MenuPageLayout';
+import StoreList from '../../components/templates/sections/StoreList';
+import styles from '@productindex/styles/businesspage.module.css'
 
 export default function ManageBusiness() {
-  const handleOnChange = e => {
-    return e;
-  };
+  const router = useRouter()
   return (
-    <>
-      <div className="side-by-side">
-        <BusinessSidebar
-          currentlyViewedBusiness={'The Testing Ground'}
-          businessListLink={'#'}
-          optionList={[{name: '', value: ''}]}
-          addStoreLink={'#'}
-          storeDetailsLink={'#'}
-          storeInventoryLink={'#'}
-          storeReviewsLink={'#'}
-          manageBusinessLink={'#'}
-          manageBusinessProductLink={'#'}
-          helpLink="#"
-          onChange={handleOnChange}
-        />
+    <MenuPageLayout>
+      <div className={styles.businessInfoSection}>
+        Business info here
       </div>
-    </>
+      <StoreList businessId={router.query.businessId} />
+
+    </MenuPageLayout>
   );
 }

@@ -2,18 +2,13 @@ import React from 'react'
 import Link  from 'next/link';
 import styles from './sidebar.module.css'
 import { Dropdown } from '@productindex/components/formElements/Dropdown';
+import { useRouter } from 'next/router';
+import { link } from 'fs';
+
 
 type Props = {
     currentlyViewedBusiness: string;
-    businessListLink: string;
     optionList: SelectOptions[];
-    addStoreLink: string;
-    storeDetailsLink: string;
-    storeInventoryLink: string;
-    storeReviewsLink: string;
-    manageBusinessLink: string;
-    manageBusinessProductLink: string;
-    helpLink: string;
     onChange: any;
 
 }
@@ -22,9 +17,25 @@ type SelectOptions = {
     value: string;
 }
 
-const BusinessSidebar = ({ currentlyViewedBusiness, businessListLink, optionList, addStoreLink, storeDetailsLink, storeInventoryLink, storeReviewsLink, manageBusinessLink, manageBusinessProductLink, helpLink, onChange}: Props) => {
-  return (
-    <div>
+
+
+const BusinessSidebar = ({ currentlyViewedBusiness, optionList, onChange}: Props) => {
+    const router = useRouter()
+    const businessId = 1;
+    const storeName = 'AlphaBet'
+    const links = {
+        changeBusiness: '/my-business',
+        addStore: `/b/${businessId}/create-store`,
+        storeDetails: `/store/${storeName}`,
+        inventory: `/store/${storeName}/inventory`,
+        reviews: `/store/${storeName}/reviews`,
+        business: `/b/${businessId}`,
+        businessProducts: `/b/${businessId}/products`,
+        help: '/help'
+
+    }
+    return (
+    <>
         <div className={styles.bizSidebar}>
             <div className={`${styles.businessSection} ${styles.sideBarSection}`}>
             <div className={styles.businessBox}>
@@ -34,7 +45,7 @@ const BusinessSidebar = ({ currentlyViewedBusiness, businessListLink, optionList
                 </div>
 
                 <h5>{currentlyViewedBusiness}</h5>
-                <Link href={businessListLink}><a className='link'>Change</a></Link>
+                <Link href={links.changeBusiness}><a className='link'>Change</a></Link>
             </div>
 
             </div>
@@ -50,23 +61,23 @@ const BusinessSidebar = ({ currentlyViewedBusiness, businessListLink, optionList
                 />
             </div>
 
-            <Link href={addStoreLink}><a className={`link ${styles.itemPadding}`}>+ Add new store</a></Link>
+            <Link href={links.addStore}><a className={`link ${styles.itemPadding}`}>+ Add new store</a></Link>
             </div>
             <div className={`${styles.manageBusiness} ${styles.sideBarSection}`}>
             <h6 className={`${styles.sideBarLabel}`}>Manage store</h6>
-            <Link href={storeDetailsLink}><a className={styles.navSelector}>Details</a></Link>
-            <Link href={storeInventoryLink}><a className={styles.navSelector}>Inventory</a></Link>
-            <Link href={storeReviewsLink}><a className={styles.navSelector}>Reviews</a></Link>
+            <Link href={links.storeDetails}><a className={styles.navSelector}>Details</a></Link>
+            <Link href={links.inventory}><a className={styles.navSelector}>Inventory</a></Link>
+            <Link href={links.reviews}><a className={styles.navSelector}>Reviews</a></Link>
             </div>
             <div className={styles.sideBarSection}>
-            <Link href={manageBusinessLink}><a className={styles.navSelector}>Manage Business</a></Link>
-            <Link href={manageBusinessProductLink}><a className={styles.navSelector}>Business Products</a></Link>
+            <Link href={links.business}><a className={styles.navSelector}>Manage Business</a></Link>
+            <Link href={links.businessProducts}><a className={styles.navSelector}>Manage Products</a></Link>
             </div>
             <div className={styles.sideBarSection}>
-            <Link href={helpLink}><a className={styles.navSelector}>Help</a></Link>
+            <Link href={links.help}><a className={styles.navSelector}>Help</a></Link>
             </div>
         </div>
-    </div>
+    </>
   )
 }
 

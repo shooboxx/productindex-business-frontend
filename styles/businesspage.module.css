@@ -1,0 +1,79 @@
+.listedStore {
+    display: flex;
+    border: 1.5px solid #e5e9e8;
+    padding: .25rem 1rem;
+}
+.listedStore:first-child {
+    border-radius: 4px 4px 0 0;
+}
+.listedStore:last-child {
+    border-radius: 0px 0px 4px 4px;
+}
+.listedStore:only-child {
+    border-radius: 4px;
+}
+.listedStore:not(:first-child) {
+    border-top: 0;
+}
+
+.storeHandle {
+    width: 12rem;
+    flex-grow: 1;
+}
+
+.storeHandleLink:link,
+.storeHandleLink:active,
+.storeHandleLink:visited,
+.storeHandleLink:hover {
+    text-decoration: none;
+    color: #13C8C4;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.storeAddress {
+    flex-grow: 6;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.storeStatus {
+    /* width: 6rem; */
+    flex-grow: 2;
+}
+.storeMenu {
+    width: 1.25rem;
+    /* flex-grow: 1; */
+}
+.mainContent {
+    transform: translateX(14rem);
+    width: calc(100% - 14rem);
+    min-height: 100vh;
+    padding: 0 1rem ;
+}
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: 40rem;
+}
+
+.businessStores h6 {
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+.listedStore div {
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.businessInfoSection {
+    background-color: #e5e9e8;
+    width: 100%;
+    height: 200px;
+    margin-top: 1.5rem;
+}
+
+.storeListSection {
+    margin-top: 1.5rem;
+}
