@@ -53,5 +53,23 @@ export const BusinessApi = {
                 : ApiErrorMessage.FailedCreatingBusinessStore
             }
         })
+    },
+    getUserBusinesses: async (): Promise<ApiResponse> => {
+        return authAxios({
+            method: 'get',
+            url: `${process.env.BACKEND_URL}/api/businesses`,
+        })
+        .then(({data})=> {
+            return {success: true, data: data}
+        })
+        .catch(err => {
+            return {
+                error: err.response?.data
+                ? err.response.data.error
+                : ApiErrorMessage.FailedBusinessFetch
+            }
+        })
+
+        
     }
 }

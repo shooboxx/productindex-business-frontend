@@ -1,26 +1,30 @@
 import Link from 'next/link';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {EmptyStateMessages} from '@productindex/const/emptyStateMessages';
-import { BusinessApi } from '@productindex/api/business';
-import BusinessCard from '@productindex/components/BusinessCard';
-//TODO: Only show this page if you are logged in
+
 export default function MyBusinesses() {
-  const [businesses, setBusinesses] = useState([]);
-  useEffect(()=> {
-    BusinessApi.getUserBusinesses().then(({data})=> {
-      setBusinesses(data)
-    }).catch(err => {
-      console.log(err)
-    })
-  }, [])
+  const [businesses, setBusinesses] = useState([{}]);
   return (
     <div className="biz-container">
       <div className="business-section">
-        <h4>My Businesses ({businesses.length})</h4>
+        <h4>My Businesses (3)</h4>
         <p>Mangage your business and keep up to date with what's new!</p>
         <div className="business-card-container">
           {businesses.length > 0 ? (
-            businesses.map(business => <BusinessCard business={business} key={business.id} />)
+            <Link href="/b/1234">
+              <a className="card-link">
+                <div className="business-card">
+                  <div className="biz-profile-photo">
+                    <img src="/images/Default-photo-store.png" alt="Default business photo" />
+                  </div>
+                  <div className="biz-card-details">
+                    <h5>My business name</h5>
+                    <small>Business description</small>
+                  </div>
+                  <div className="highlighter"></div>
+                </div>
+              </a>
+            </Link>
           ) : (
             <div className="center">
               <h5>{EmptyStateMessages.NoBusinessesYet}</h5>
@@ -63,7 +67,6 @@ export default function MyBusinesses() {
                 border-radius: 4px;
                 transition: all .4s;
                 border: 1.5px solid #e5e9e8;
-                margin-bottom: .25rem;
             }
             a.card-link {
                 display: inline-block;
